@@ -1,8 +1,9 @@
 const mostRepeatedCharacter = (input = '') => {
-    let maxRepetiton = 0;
+    if (input.length > 100) return '';
     let result = '';
+    let maxRepetiton = 0;
     const repetition = new Map();
-    const list = input.split('').filter(item => isNaN(item));
+    const list = input.split('').filter(item => /[a-zA-Z]/.test(item))
     for (const char of list) {
         if (repetition.has(char)) {
             const charCount = repetition.get(char) + 1;
@@ -15,8 +16,8 @@ const mostRepeatedCharacter = (input = '') => {
         else
             repetition.set(char, 1);
     }
-    console.log(result);
+    return result;
 };
 
-mostRepeatedCharacter('abcddefda1111133333333');
-mostRepeatedCharacter('AA0AB0BB0ccc0aa0aw00wo0BBBw123123');
+console.log(mostRepeatedCharacter('abcddefda1111133333333'));
+console.log(mostRepeatedCharacter('AA0AB0BB0ccc0aa0aw00wo0BBBw123123'));
