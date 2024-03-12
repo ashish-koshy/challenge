@@ -4,7 +4,8 @@ const mostRepeatedCharacter = (input = '') => {
 
     let maxRepetiton = 0;
     const repetition = new Map();
-    const list = input.split('').filter(item => /[a-zA-Z]/.test(item))
+    const list = input.split('').filter(item => /[a-zA-Z]/.test(item));
+
     for (const char of list) {
         if (repetition.has(char)) {
             const charCount = repetition.get(char) + 1;
@@ -17,6 +18,7 @@ const mostRepeatedCharacter = (input = '') => {
         else
             repetition.set(char, 1);
     }
+    
     return result;
 };
 
