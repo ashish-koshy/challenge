@@ -1,9 +1,3 @@
-const http = require('http');
-
-const server = http.createServer();
-
-server.listen(3000, )
-
 function * generate() {
   yield 1;
   yield 2;
