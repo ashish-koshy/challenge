@@ -1,4 +1,4 @@
-const mostRepeatedCharacter = (input = '') => {
+const mostRepeatedAlphabet = (input = '') => {
     let result = '';
     if (input.length > 100) return result;
 
@@ -22,5 +22,5 @@ const mostRepeatedCharacter = (input = '') => {
     return result;
 };
 
-console.log(mostRepeatedCharacter('abcddefda1111133333333'));
-console.log(mostRepeatedCharacter('AA0AB0BB0ccc0aa0aw00wo0BBBw123123'));
+console.log(mostRepeatedAlphabet('abcddefda1111133333333'));
+console.log(mostRepeatedAlphabet('AA0AB0BB0ccc0aa0aw00wo0BBBw123123'));
