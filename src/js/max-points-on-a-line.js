@@ -6,7 +6,7 @@ var getSlope = (first, second) => {
 
 var maxPoints = function(points) {
     if (points.length < 2)
-        return 0;
+        return points.length;
     
     let maxPoints = 0;
     let i = 0;
@@ -15,21 +15,23 @@ var maxPoints = function(points) {
         const firstPair = points[i];
         const secondPair = points[i + 1];
         const firstSlope = getSlope(firstPair, secondPair);
-        for (let j = 0; j < points.length; j++) {
+        console.log('\n');
+        for (let j = i + 2; j < points.length; j++) {
             const thirdPair = points[j];
+            console.log(thirdPair);
             const secondSlope =  getSlope(secondPair, thirdPair);
             if (firstSlope === secondSlope)
                 pairMaxPoints++;
         }
         if (pairMaxPoints > maxPoints)
             maxPoints = pairMaxPoints;
-        i++;
+        i+=2;
     }
 
     return maxPoints;
 };
 
-console.log(maxPoints([[1,1],[2,2],[3,3]]));
-console.log(maxPoints([[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]));
-console.log(maxPoints([[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9]]));
+// console.log(maxPoints([[1,1],[2,2],[3,3]]));
+// console.log(maxPoints([[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]));
+// console.log(maxPoints([[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9]]));
 console.log(maxPoints([[1,1],[1,2],[1,3],[1,4],[1,5]]));
